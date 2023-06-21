@@ -7,9 +7,11 @@ import { TbTrashXFilled, TbUser } from 'react-icons/tb';
 function ContactList() {
   const contacts = useSelector(Selector.getFilterContacts);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(Operation.fetchContacts());
   }, [dispatch]);
+
   return (
     <ul className="contact">
       {contacts.map(({ id, name, number }) => (

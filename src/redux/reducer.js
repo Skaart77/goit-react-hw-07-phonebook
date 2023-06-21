@@ -5,7 +5,7 @@ import { setFilter } from './actions';
 const contactSlice = createSlice({
   name: 'contacts',
   initialState: {
-    items: [],
+    contactsItems: [],
     isLoading: false,
     error: null,
   },
