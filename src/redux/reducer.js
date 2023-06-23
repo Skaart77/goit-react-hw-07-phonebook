@@ -14,7 +14,7 @@ const contactSlice = createSlice({
     // Fetch
     [fetchContacts.fulfilled]: (state, { payload }) => ({
       ...state,
-      items: payload,
+      contactsItems: payload,
       isLoading: false,
       error: null,
     }),
@@ -32,7 +32,7 @@ const contactSlice = createSlice({
     // Delete
     [deleteContact.fulfilled]: (state, { payload }) => ({
       ...state,
-      items: state.items.filter(({ id }) => id !== payload),
+      contactsItems: state.contactsItems.filter(({ id }) => id !== payload),
     }),
     [deleteContact.pending]: state => ({
       ...state,
@@ -48,7 +48,7 @@ const contactSlice = createSlice({
     // Add
     [addContact.fulfilled]: (state, { payload }) => ({
       ...state,
-      items: [...state.items, payload],
+      contactsItems: [...state.contactsItems, payload],
       isLoading: false,
       error: payload,
     }),
